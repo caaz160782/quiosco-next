@@ -1,6 +1,7 @@
 import { formatCurrency} from "@/src/utils"
 import { Product } from "@prisma/client"
 import Image from "next/image"
+import AddProductButton from "./AddProductButton"
 
 type ProductCardProps = {
     product: Product
@@ -21,6 +22,9 @@ export default function ProductCard({product} : ProductCardProps) {
             <p className="mt-5 font-black text-4xl text-amber-500">
               { formatCurrency( product.price )}
             </p>
+            <AddProductButton 
+              product={product}
+            />
       </div>
     </div>
   )
